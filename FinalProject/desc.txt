@@ -1,0 +1,29 @@
+# Karachi Weather Data Analysis and Forecasting
+## by: Saddam Hussain
+## PGD Data Science with AI (Batch - 10)
+**Project Summary**\
+\
+This project, titled "Karachi Weather Data Analysis and Forecasting," is a robust time-series analysis on a dataset of hourly weather conditions. The primary objective is to perform exploratory data analysis (EDA) on key meteorological variables like temperature, relative humidity, and rainfall, and subsequently forecast future temperature trends using the Prophet time-series library. The project demonstrates a strong understanding of data cleaning, feature engineering, and advanced forecasting techniques, making it a solid foundation for further predictive analytics.
+**Data Scrapping**\
+\
+The data for this project was scrapped from OpenMeteo's historical database using its API. The weather data for Karachi was taken from January - 2022 upto September - 2025.
+This initial step is crucial for understanding the raw data. The data.info() output reveals that the dataset contains 32,136 non-null entries and the 'date' column is of object type. This indicates there are no missing values, but the date column needs to be converted to a proper datetime format for time-series analysis. The data.head() output shows the columns date, temperature_2m, relative_humidity_2m, rain, and wind_speed_10m, which are the core variables for this analysis.
+The statistical summary provides key insights into the numerical features.
+
+- The mean temperature is approximately 27.15°C, with a standard deviation of 5.05°C, suggesting moderate variability.
+
+- The maximum recorded rainfall is 80.5 mm, indicating at least one instance of a heavy rainfall event.
+
+- The mean relative humidity is 60.91%, with a maximum value of 100% and a minimum of 9%, which highlights the wide range of humidity levels in Karachi.
+The scatter plot with an Ordinary Least Squares (OLS) trendline visually confirms a clear negative correlation between temperature and relative humidity. As temperature increases, the relative humidity tends to decrease, which is a common meteorological phenomenon. This relationship is important for understanding the climate dynamics of the region.
+By converting the date column to the datetime format, the data is now properly prepared for time-series analysis. The creation of year and month columns allows for further exploration of seasonality and annual trends, which is a crucial step in time-series feature engineering.
+The use of the Prophet library, an open-source tool by Meta, successfully models the temperature time series. The generated plot clearly visualizes the historical data, the forecasted trend, and the prediction interval. The plot_components_plotly output will show the underlying trend and seasonal patterns (daily, weekly, and yearly), confirming that the model has captured the inherent periodicity in the temperature data. The forecast for the next 365 periods (one year) appears consistent with the observed seasonal patterns.
+### **Final Project Summary and Recommendations**
+
+- This project has successfully completed a comprehensive time-series analysis of Karachi's weather data. The key findings include:
+
+- The dataset is well-structured and complete, with no missing values.
+
+- There is a statistically significant negative correlation between temperature and relative humidity.
+
+- The Prophet model is effective at capturing the trends and seasonality in the temperature data, providing a solid forecast for the future.
